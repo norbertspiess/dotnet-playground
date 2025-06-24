@@ -4,8 +4,8 @@ POST {{WebApplication1_HostAddress}}/api/TodoItems
 Content-Type: application/json
 
 {
-    "name": "First",
-    "complete": false
+  "name": "First",
+  "isComplete": false
 }
 
 ###
@@ -14,3 +14,20 @@ GET {{WebApplication1_HostAddress}}/api/TodoItems/
 Accept: application/json
 
 ###
+
+@id=1
+GET {{WebApplication1_HostAddress}}/api/TodoItems/{{id}}
+
+###
+
+PUT {{WebApplication1_HostAddress}}/api/TodoItems/{{id}}
+Content-Type: application/json
+
+{
+    "id": {{id}},
+    "isComplete": true
+}
+
+###
+
+DELETE {{WebApplication1_HostAddress}}/api/TodoItems/{{id}}
