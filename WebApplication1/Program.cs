@@ -1,5 +1,6 @@
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using WebApplication1.Todo.Infrastructure;
 using WebApplication1.Todo.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,9 @@ builder.Services.AddControllers();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<TodoContext>(opt => 
     opt.UseInMemoryDatabase("TodoList"));
+
+builder.Services.AddScoped<ITodoItemRepository, TodoItemRepository>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
