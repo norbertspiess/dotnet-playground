@@ -1,0 +1,16 @@
+@WebApplication1_HostAddress = http://localhost:5100
+
+POST {{WebApplication1_HostAddress}}/api/TodoItems
+Content-Type: application/json
+
+{
+    "name": "First",
+    "complete": false
+}
+
+###
+
+GET {{WebApplication1_HostAddress}}/api/TodoItems/
+Accept: application/json
+
+###
