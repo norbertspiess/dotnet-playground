@@ -4,7 +4,7 @@ POST {{WebApplication1_HostAddress}}/api/TodoItems
 Content-Type: application/json
 
 {
-  "name": "First",
+  "name": "Firs t",
   "isComplete": false
 }
 
